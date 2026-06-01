@@ -201,7 +201,7 @@ function loadSampleGuestbook() {
 // 카카오 SDK 초기화 및 공유
 function initKakao() {
     // 여기에 카카오 개발자 콘솔에서 발급받은 JavaScript 키를 입력하세요
-    const KAKAO_APP_KEY = 'f98ae585053071a8a0b18d6d5f9d45f4';
+    const KAKAO_APP_KEY = 'a502e286442858e1d2642dd6e3dfb632';
     
     if (typeof Kakao !== 'undefined' && !Kakao.isInitialized()) {
         try {
@@ -225,8 +225,8 @@ function shareKakao() {
         Kakao.Share.sendDefault({
             objectType: 'feed',
             content: {
-                title: 'Lee JunHyung & Lee SangEun',
-                description: 'Sunday, November 30, 2025',
+                title: 'Semyung Kwon & Bongsub Song',
+                description: 'Sunday, September 13, 2026',
                 imageUrl: window.location.origin + '/images/thumbnail_and_top.jpeg',
                 link: {
                     mobileWebUrl: window.location.href,
@@ -252,7 +252,7 @@ function shareKakao() {
 // 기존 방식 (SDK 실패시 대체)
 function fallbackKakaoShare() {
     const url = window.location.href;
-    const text = '준형 ❤️ 상은 결혼합니다\n2025년 11월 30일 일요일 낮 12시\n수서 식물관PH';
+    const text = '세명 ❤️ 봉섭 결혼합니다\n2026년 9월 13일 일요일 낮 2시 30분\n 더세인트 신도림';
     
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     
