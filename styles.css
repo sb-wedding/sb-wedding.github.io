@@ -122,14 +122,14 @@ section {
 /* 날짜와 시간 */
 .lockscreen-datetime {
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     color: rgb(254, 252, 214);
     z-index: 10;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 20px;
@@ -163,7 +163,7 @@ section {
 /* 알림 메시지 */
 .notification {
     position: absolute;
-    top: 55%;
+    top: 65%;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
