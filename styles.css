@@ -129,11 +129,16 @@ section {
     color: white;
     z-index: 10;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 18px 32px;
 }
 
 .lockscreen-date {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     margin-bottom: 10px;
     letter-spacing: 1px;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Arial, sans-serif;
@@ -141,7 +146,7 @@ section {
 
 .lockscreen-time {
     font-size: 72px;
-    font-weight: 200;
+    font-weight: 700;
     letter-spacing: -2px;
     line-height: 1;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Arial, sans-serif;
