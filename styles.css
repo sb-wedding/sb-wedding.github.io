@@ -124,10 +124,10 @@ section {
 /* 날짜와 시간 */
 .lockscreen-datetime {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     /* translateY(-75%)로 무게중심을 중앙보다 위로 배치, 브라우저별 뷰포트 차이 흡수 */
-    transform: translate(-50%, -75%);
+    transform: translate(-50%, -50%);
     width: 70%;
     text-align: center;
     color: rgb(254, 252, 214);
