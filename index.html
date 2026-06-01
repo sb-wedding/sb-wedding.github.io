@@ -347,7 +347,7 @@
                 var geocoder = new kakao.maps.services.Geocoder();
                 
                 // 주소로 좌표를 검색합니다
-                geocoder.addressSearch('서울특별시 강남구 광평로34길 24', function(result, status) {
+                geocoder.addressSearch('서울 구로구 경인로 662', function(result, status) {
                     
                     // 정상적으로 검색이 완료됐으면 
                      if (status === kakao.maps.services.Status.OK) {
@@ -369,8 +369,8 @@
                 
                         // 인포윈도우 내용
                         var iwContent = '<div style="padding:8px 10px; width:180px; text-align:center;">' +
-                                        '<strong style="font-size:14px;">수서 식물관PH</strong><br>' +
-                                        '<span style="font-size:12px; color:#666;">서울 강남구 광평로34길 24</span>' +
+                                        '<strong style="font-size:14px;">더세인트웨딩</strong><br>' +
+                                        '<span style="font-size:12px; color:#666;">서울 구로구 경인로 662 디큐브시티 41층 파노라마홀</span>' +
                                         '</div>';
                         
                         // 인포윈도우 생성
