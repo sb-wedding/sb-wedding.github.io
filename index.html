@@ -172,7 +172,7 @@
         <h2 class="section-title">오시는 길</h2>
         <div class="venue-info">
             <h3>더세인트웨딩</h3>
-            <p>서울특별시 구로구 경인로 662 디큐브시티 41층-파노라마홀<br>
+            <p>서울특별시 구로구 경인로 662 디큐브시티 41층 파노라마홀<br>
             02-2211-2400</p>
         </div>
         
@@ -347,7 +347,7 @@
                 var geocoder = new kakao.maps.services.Geocoder();
                 
                 // 주소로 좌표를 검색합니다
-                geocoder.addressSearch('서울 구로구 경인로 662 더세인트41', function(result, status) {
+                geocoder.addressSearch('서울특별시 구로구 신도림동 692', function(result, status) {
                     
                     // 정상적으로 검색이 완료됐으면 
                      if (status === kakao.maps.services.Status.OK) {
@@ -370,7 +370,7 @@
                         // 인포윈도우 내용
                         var iwContent = '<div style="padding:8px 10px; width:180px; text-align:center;">' +
                                         '<strong style="font-size:14px;">더세인트웨딩</strong><br>' +
-                                        '<span style="font-size:12px; color:#666;">서울 구로구 경인로 662\n 디큐브시티 41층 파노라마홀</span>' +
+                                        '<span style="font-size:12px; color:#666;">서울 구로구 경인로 신도림동   디큐브시티 41층 파노라마홀</span>' +
                                         '</div>';
                         
                         // 인포윈도우 생성
