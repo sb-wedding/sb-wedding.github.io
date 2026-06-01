@@ -1,6 +1,6 @@
 // D-Day 계산
 function calculateDday() {
-    const weddingDate = new Date('2025-11-30');
+    const weddingDate = new Date('2026-9-13');
     const today = new Date();
     const diff = weddingDate - today;
     const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
@@ -299,7 +299,7 @@ function fallbackCopyLink(url) {
 
 // 웨딩홀 전화
 function callVenue() {
-    window.location.href = 'tel:02-459-9929';
+    window.location.href = 'tel:02-2211-2400';
 }
 
 // 개인 전화
