@@ -307,6 +307,11 @@ function callPerson(phoneNumber) {
     window.location.href = 'tel:' + phoneNumber;
 }
 
+// 문자 보내기
+function sendSMS(phoneNumber) {
+    window.location.href = 'sms:' + phoneNumber;
+}
+
 // 스크롤 애니메이션
 function observeElements() {
     const options = {
