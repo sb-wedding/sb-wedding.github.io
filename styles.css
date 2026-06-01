@@ -129,7 +129,7 @@ section {
     color: rgb(254, 252, 214);
     z-index: 10;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    background: rgba(255, 255, 255, 0.36);
+    background: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 20px;
@@ -661,6 +661,25 @@ section {
     color: #555555;
     margin-top: 25px;
     font-weight: 500;
+}
+
+.calendar-add-btn {
+    display: block;
+    margin: 16px auto 0;
+    padding: 10px 24px;
+    background: #ffffff;
+    color: #555555;
+    border: 1px solid #d4c4b0;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.calendar-add-btn:active {
+    background: #f0ebe4;
 }
 
 /* 오시는 길 섹션 */

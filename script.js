@@ -312,6 +312,31 @@ function sendSMS(phoneNumber) {
     window.location.href = 'sms:' + phoneNumber;
 }
 
+// 캘린더 추가 (ICS 파일 다운로드)
+function addToCalendar() {
+    const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Wedding//Wedding//KO',
+        'BEGIN:VEVENT',
+        'DTSTART:20260913T143000',
+        'DTEND:20260913T163000',
+        'SUMMARY:권세명 & 송봉섭 결혼식',
+        'LOCATION:더세인트웨딩 (서울 구로구 경인로 662 디큐브시티 41층)',
+        'DESCRIPTION:2026년 9월 13일 일요일 낮 2시 30분\\n더세인트웨딩 파노라마홀',
+        'END:VEVENT',
+        'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'wedding_20260913.ics';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
 // 스크롤 애니메이션
 function observeElements() {
     const options = {
