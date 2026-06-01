@@ -324,6 +324,18 @@ function addToCalendar() {
         'SUMMARY:권세명 & 송봉섭 결혼식',
         'LOCATION:더세인트웨딩 (서울 구로구 경인로 662 디큐브시티 41층)',
         'DESCRIPTION:2026년 9월 13일 일요일 낮 2시 30분\\n더세인트웨딩 파노라마홀',
+        // 1주일 전 알림
+        'BEGIN:VALARM',
+        'TRIGGER:-P1W',
+        'ACTION:DISPLAY',
+        'DESCRIPTION:결혼식 1주일 전입니다 🎊',
+        'END:VALARM',
+        // 1일 전 알림
+        'BEGIN:VALARM',
+        'TRIGGER:-P1D',
+        'ACTION:DISPLAY',
+        'DESCRIPTION:결혼식 내일입니다 💍',
+        'END:VALARM',
         'END:VEVENT',
         'END:VCALENDAR'
     ].join('\r\n');
