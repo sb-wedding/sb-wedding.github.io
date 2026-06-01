@@ -124,9 +124,8 @@ section {
 /* 날짜와 시간 */
 .lockscreen-datetime {
     position: absolute;
-    top: 60%;
+    top: 38%;
     left: 50%;
-    /* translateY(-75%)로 무게중심을 중앙보다 위로 배치, 브라우저별 뷰포트 차이 흡수 */
     transform: translate(-50%, -50%);
     width: 70%;
     text-align: center;
@@ -168,7 +167,7 @@ section {
 /* 알림 메시지 */
 .notification {
     position: absolute;
-    top: 62%;
+    top: 66%;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -1145,28 +1144,18 @@ section {
 }
 
 /* 짧은 화면 최적화 (iPhone SE 1세대, 가로모드 등) */
+/* top은 transform: translate(-50%, -50%) 기준으로 요소 중심 위치 */
 @media (max-height: 640px) {
     .lockscreen-time {
         font-size: 52px;
     }
 
     .lockscreen-datetime {
-        top: 15%;
+        top: 35%;
     }
 
     .notification {
-        top: 62%;
-    }
-}
-
-/* 중간 높이 화면 (iPhone SE 2/3세대: 667px) */
-@media (min-height: 641px) and (max-height: 700px) {
-    .lockscreen-datetime {
-        top: 22%;
-    }
-
-    .notification {
-        top: 68%;
+        top: 64%;
     }
 }
 
