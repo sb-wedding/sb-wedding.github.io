@@ -132,11 +132,12 @@ section {
     color: rgb(254, 252, 214);
     z-index: 10;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    background: rgba(0, 0, 0, 0.045);
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
+    background: rgba(0, 0, 0, 0.065);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
     border-radius: 24px;
     padding: 18px 32px;
+    animation: datetime-pulse 2s infinite;
 }
 
 .lockscreen-wedding-label {
@@ -172,10 +173,10 @@ section {
     transform: translateX(-50%);
     width: 90%;
     max-width: 350px;
-    background: rgba(255, 255, 255, 0.835);
+    background: rgba(255, 255, 255, 0.635);
     /* -webkit- 접두사: Safari 및 구형 iOS/Android 브라우저 필수 */
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     border-radius: 16px;
     padding: 12px;
     display: -webkit-box;
@@ -277,6 +278,15 @@ section {
     }
     50% {
         opacity: 0.5;
+    }
+}
+
+@keyframes datetime-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.78;
     }
 }
 
