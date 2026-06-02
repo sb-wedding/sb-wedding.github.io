@@ -198,11 +198,14 @@ function loadSampleGuestbook() {
     });
 }
 
+// 사이트 고정 URL (카카오 개발자 콘솔에 등록된 도메인과 반드시 일치해야 함)
+const SITE_URL = 'https://sb-wedding.github.io';
+const SITE_IMAGE_URL = 'https://sb-wedding.github.io/images/sharing_thumbnail.jpg';
+
 // 카카오 SDK 초기화 및 공유
 function initKakao() {
-    // 여기에 카카오 개발자 콘솔에서 발급받은 JavaScript 키를 입력하세요
     const KAKAO_APP_KEY = 'a502e286442858e1d2642dd6e3dfb632';
-    
+
     if (typeof Kakao !== 'undefined' && !Kakao.isInitialized()) {
         try {
             Kakao.init(KAKAO_APP_KEY);
@@ -214,31 +217,29 @@ function initKakao() {
 
 // 카카오톡 공유
 function shareKakao() {
-    // SDK 초기화 확인
     if (typeof Kakao === 'undefined' || !Kakao.isInitialized()) {
-        // SDK가 없거나 초기화되지 않은 경우 기존 방식 사용
         fallbackKakaoShare();
         return;
     }
-    
+
     try {
         Kakao.Share.sendDefault({
             objectType: 'feed',
             content: {
                 title: 'Semyung Kwon & Bongsub Song',
                 description: 'Sunday, September 13, 2026',
-                imageUrl: window.location.origin + '/images/sharing_thumbnail.jpg',
+                imageUrl: SITE_IMAGE_URL,
                 link: {
-                    mobileWebUrl: window.location.href,
-                    webUrl: window.location.href,
+                    mobileWebUrl: SITE_URL,
+                    webUrl: SITE_URL,
                 },
             },
             buttons: [
                 {
                     title: '청첩장 보기',
                     link: {
-                        mobileWebUrl: window.location.href,
-                        webUrl: window.location.href,
+                        mobileWebUrl: SITE_URL,
+                        webUrl: SITE_URL,
                     },
                 },
             ],
@@ -251,7 +252,7 @@ function shareKakao() {
 
 // 기존 방식 (SDK 실패시 대체)
 function fallbackKakaoShare() {
-    const url = window.location.href;
+    const url = SITE_URL;
     const text = '세명 ❤️ 봉섭 결혼합니다\n2026년 9월 13일 일요일 낮 2시 30분\n 더세인트 신도림';
     
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
