@@ -236,7 +236,7 @@ function shareKakao() {
             },
             buttons: [
                 {
-                    title: '청첩장 보기',
+                    title: '모바일 청첩장 바로가기',
                     link: {
                         mobileWebUrl: SITE_URL,
                         webUrl: SITE_URL,
