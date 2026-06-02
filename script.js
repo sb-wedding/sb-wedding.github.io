@@ -227,7 +227,7 @@ function shareKakao() {
             content: {
                 title: 'Semyung Kwon & Bongsub Song',
                 description: 'Sunday, September 13, 2026',
-                imageUrl: window.location.origin + '/images/thumbnail_and_top.jpg',
+                imageUrl: window.location.origin + '/images/sharing_thumbnail.jpg',
                 link: {
                     mobileWebUrl: window.location.href,
                     webUrl: window.location.href,
