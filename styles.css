@@ -149,7 +149,7 @@ section {
 }
 
 .lockscreen-date {
-    font-size: 18px;
+    font-size: 48px;
     font-weight: 600;
     margin-bottom: 10px;
     letter-spacing: 1px;
@@ -157,7 +157,7 @@ section {
 }
 
 .lockscreen-time {
-    font-size: 72px;
+    font-size: 36px;
     font-weight: 700;
     letter-spacing: -2px;
     line-height: 1;
