@@ -359,7 +359,7 @@ function initCoverColorScroll() {
     if (!coverImg) return;
 
     // 이 거리(px)만큼만 스크롤하면 완전한 원본 컬러가 됨. 작을수록 빨리 색이 살아남.
-    const FULL_COLOR_DISTANCE = 120;
+    const FULL_COLOR_DISTANCE = 80;
 
     let ticking = false;
 
