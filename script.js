@@ -358,11 +358,13 @@ function initCoverColorScroll() {
     const coverImg = document.querySelector('.cover-image img');
     if (!coverImg) return;
 
+    // 이 거리(px)만큼만 스크롤하면 완전한 원본 컬러가 됨. 작을수록 빨리 색이 살아남.
+    const FULL_COLOR_DISTANCE = 120;
+
     let ticking = false;
 
     function updateColor() {
-        // 한 화면 높이만큼 스크롤하면 완전한 컬러가 되도록 진행도 계산 (0~1)
-        const progress = Math.min(window.scrollY / window.innerHeight * 0.005, 1);
+        const progress = Math.min(window.scrollY / FULL_COLOR_DISTANCE, 1);
         coverImg.style.setProperty('--cover-color', progress.toFixed(3));
         ticking = false;
     }
