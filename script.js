@@ -229,7 +229,7 @@ function shareKakao() {
         Kakao.Share.sendDefault({
             objectType: 'feed',
             content: {
-                title: 'Semyung Kwon & Bongsub Song',
+                title: 'Bongsub Song & Semyung Kwon',
                 description: 'Sunday, September 13, 2026',
                 imageUrl: SITE_IMAGE_URL,
                 link: {
