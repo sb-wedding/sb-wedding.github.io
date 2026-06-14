@@ -256,7 +256,7 @@ function shareKakao() {
 // 기존 방식 (SDK 실패시 대체)
 function fallbackKakaoShare() {
     const url = SITE_URL;
-    const text = '세명 ❤️ 봉섭 결혼합니다\n2026년 9월 13일 일요일 낮 2시 30분\n 더세인트 신도림';
+    const text = '봉섭 ❤️ 세명 결혼합니다\n2026년 9월 13일 일요일 낮 2시 30분\n 더세인트 신도림';
     
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     
