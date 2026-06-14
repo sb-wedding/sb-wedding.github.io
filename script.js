@@ -362,7 +362,7 @@ function initCoverColorScroll() {
 
     function updateColor() {
         // 한 화면 높이만큼 스크롤하면 완전한 컬러가 되도록 진행도 계산 (0~1)
-        const progress = Math.min(window.scrollY / window.innerHeight * 0.1, 1);
+        const progress = Math.min(window.scrollY / window.innerHeight * 0.005, 1);
         coverImg.style.setProperty('--cover-color', progress.toFixed(3));
         ticking = false;
     }
