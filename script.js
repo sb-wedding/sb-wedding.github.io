@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 스크롤 애니메이션
     observeElements();
+
+    // 커버 사진 흑백→컬러 스크롤 효과
+    initCoverColorScroll();
     
     // 샘플 방명록 데이터 로드
     loadSampleGuestbook();
@@ -348,6 +351,31 @@ function addToCalendar() {
     a.download = 'wedding_20260913.ics';
     a.click();
     URL.revokeObjectURL(url);
+}
+
+// 커버 사진: 스크롤 내릴수록 흑백 → 원본 컬러로 점진 전환
+function initCoverColorScroll() {
+    const coverImg = document.querySelector('.cover-image img');
+    if (!coverImg) return;
+
+    let ticking = false;
+
+    function updateColor() {
+        // 한 화면 높이만큼 스크롤하면 완전한 컬러가 되도록 진행도 계산 (0~1)
+        const progress = Math.min(window.scrollY / window.innerHeight, 1);
+        coverImg.style.setProperty('--cover-color', progress.toFixed(3));
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateColor);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // 초기 상태 반영
+    updateColor();
 }
 
 // 스크롤 애니메이션
