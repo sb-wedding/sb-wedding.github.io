@@ -201,9 +201,16 @@ function loadSampleGuestbook() {
     });
 }
 
-// 사이트 고정 URL (카카오 개발자 콘솔에 등록된 도메인과 반드시 일치해야 함)
-const SITE_URL = 'https://sb-wedding.github.io';
-const SITE_IMAGE_URL = 'https://sb-wedding.github.io/images/sharing_thumbnail.jpg';
+// 사이트 기본 URL (카카오 개발자 콘솔에 등록된 도메인과 반드시 일치해야 함)
+const DEFAULT_SITE_URL = 'https://sb-wedding.github.io';
+const DEFAULT_SITE_IMAGE_URL = 'https://sb-wedding.github.io/images/sharing_thumbnail.jpg';
+
+function getShareConfig() {
+    return {
+        url: document.body.dataset.siteUrl || DEFAULT_SITE_URL,
+        imageUrl: document.body.dataset.siteImageUrl || DEFAULT_SITE_IMAGE_URL
+    };
+}
 
 // 카카오 SDK 초기화 및 공유
 function initKakao() {
@@ -220,6 +227,8 @@ function initKakao() {
 
 // 카카오톡 공유
 function shareKakao() {
+    const shareConfig = getShareConfig();
+
     if (typeof Kakao === 'undefined' || !Kakao.isInitialized()) {
         fallbackKakaoShare();
         return;
@@ -231,18 +240,18 @@ function shareKakao() {
             content: {
                 title: 'Bongsub Song & Semyung Kwon',
                 description: 'Sunday, September 13, 2026',
-                imageUrl: SITE_IMAGE_URL,
+                imageUrl: shareConfig.imageUrl,
                 link: {
-                    mobileWebUrl: SITE_URL,
-                    webUrl: SITE_URL,
+                    mobileWebUrl: shareConfig.url,
+                    webUrl: shareConfig.url,
                 },
             },
             buttons: [
                 {
                     title: '모바일 청첩장 바로가기',
                     link: {
-                        mobileWebUrl: SITE_URL,
-                        webUrl: SITE_URL,
+                        mobileWebUrl: shareConfig.url,
+                        webUrl: shareConfig.url,
                     },
                 },
             ],
@@ -255,7 +264,7 @@ function shareKakao() {
 
 // 기존 방식 (SDK 실패시 대체)
 function fallbackKakaoShare() {
-    const url = SITE_URL;
+    const { url } = getShareConfig();
     const text = '봉섭 ❤️ 세명 결혼합니다\n2026년 9월 13일 일요일 낮 2시 30분\n 더세인트 신도림';
     
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
