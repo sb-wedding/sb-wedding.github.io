@@ -205,9 +205,17 @@ function loadSampleGuestbook() {
 const DEFAULT_SITE_URL = 'https://sb-wedding.github.io';
 const DEFAULT_SITE_IMAGE_URL = 'https://sb-wedding.github.io/images/sharing_thumbnail.jpg';
 
+function getCanonicalShareUrl() {
+    const configuredUrl = document.body.dataset.siteUrl;
+    const currentUrl = new URL(window.location.href);
+    const shareUrl = configuredUrl ? new URL(configuredUrl, currentUrl) : currentUrl;
+    shareUrl.hash = '';
+    return shareUrl.href;
+}
+
 function getShareConfig() {
     return {
-        url: document.body.dataset.siteUrl || DEFAULT_SITE_URL,
+        url: getCanonicalShareUrl() || DEFAULT_SITE_URL,
         imageUrl: document.body.dataset.siteImageUrl || DEFAULT_SITE_IMAGE_URL
     };
 }
