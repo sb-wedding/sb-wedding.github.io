@@ -20,6 +20,7 @@ function calculateDday() {
 // 페이지 로드 시 D-Day 계산
 document.addEventListener('DOMContentLoaded', function() {
     calculateDday();
+    initBusStopModal();
     
     // 스크롤 애니메이션
     observeElements();
@@ -33,6 +34,56 @@ document.addEventListener('DOMContentLoaded', function() {
     // 카카오 SDK 초기화
     initKakao();
 });
+
+let busStopReturnFocus = null;
+
+function initBusStopModal() {
+    const modal = document.getElementById('busStopModal');
+    if (!modal) return;
+
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeBusStopModal();
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && !modal.hidden) {
+            closeBusStopModal();
+        }
+    });
+}
+
+function openBusStopModal(imageSrc, imageAlt) {
+    const modal = document.getElementById('busStopModal');
+    const modalImage = document.getElementById('busStopModalImage');
+    if (!modal || !modalImage) return;
+
+    busStopReturnFocus = document.activeElement;
+    modalImage.src = imageSrc;
+    modalImage.alt = imageAlt;
+    modal.hidden = false;
+    document.body.classList.add('bus-stop-modal-open');
+    modal.querySelector('.bus-stop-modal-close').focus();
+}
+
+function closeBusStopModal() {
+    const modal = document.getElementById('busStopModal');
+    const modalImage = document.getElementById('busStopModalImage');
+    if (!modal) return;
+
+    modal.hidden = true;
+    document.body.classList.remove('bus-stop-modal-open');
+    if (modalImage) {
+        modalImage.src = '';
+        modalImage.alt = '';
+    }
+
+    if (busStopReturnFocus && typeof busStopReturnFocus.focus === 'function') {
+        busStopReturnFocus.focus();
+    }
+    busStopReturnFocus = null;
+}
 
 // 계좌번호 토글
 function toggleAccount(element) {

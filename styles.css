@@ -846,6 +846,141 @@ section {
     word-break: keep-all;
 }
 
+.bus-stop-guide {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #ece7de;
+}
+
+.bus-stop-guide h5 {
+    margin: 0 0 14px;
+    color: #2d2d2d;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.bus-stop-item {
+    margin: 0;
+    padding: 0 0 18px;
+}
+
+.bus-stop-item + .bus-stop-item {
+    padding-top: 18px;
+    border-top: 1px solid #ece7de;
+}
+
+.bus-stop-image-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 6px;
+    background: #e7e4df;
+    cursor: zoom-in;
+}
+
+.bus-stop-image-button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bus-stop-image-button:focus-visible {
+    outline: 3px solid #9a6a4f;
+    outline-offset: 3px;
+}
+
+.bus-stop-zoom {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(20, 20, 20, 0.72);
+    font-size: 17px;
+    line-height: 1;
+}
+
+.bus-stop-item figcaption {
+    margin-top: 10px;
+}
+
+.bus-stop-item figcaption strong {
+    display: block;
+    color: #353535;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.transport-item .bus-parking-note {
+    margin-top: 7px;
+    padding-left: 11px;
+    border-left: 3px solid #b68a62;
+    color: #715440;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.bus-stop-modal[hidden] {
+    display: none;
+}
+
+.bus-stop-modal {
+    position: fixed;
+    z-index: 11000;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 58px 12px 18px;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(5px);
+}
+
+.bus-stop-modal img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 76px);
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.bus-stop-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.bus-stop-modal-close:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+body.bus-stop-modal-open {
+    overflow: hidden;
+}
+
 .bus-contact {
     display: flex;
     flex-direction: column;

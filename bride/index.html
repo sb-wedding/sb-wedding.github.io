@@ -9,7 +9,7 @@
     <meta property="og:description" content="Sunday, September 13, 2026">
     <meta property="og:url" content="https://sb-wedding.github.io/bride/">
     <meta property="og:image" content="https://sb-wedding.github.io/images/thumbnail_renewal.jpg">
-    <link rel="stylesheet" href="styles.css?v=20260711-bus">
+    <link rel="stylesheet" href="styles.css?v=20260720-bus-stop">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;700&family=Nanum+Myeongjo:wght@400;700&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -232,6 +232,28 @@
                         <span class="bus-place">식장에서 출발지 방향으로 복귀</span>
                     </li>
                 </ol>
+                <div class="bus-stop-guide">
+                    <h5>승차 위치 안내</h5>
+                    <figure class="bus-stop-item">
+                        <button type="button" class="bus-stop-image-button" onclick="openBusStopModal('images/bus/stop1.jpg', 'DGIST 정문 인근 대절버스 승차 위치 안내')" aria-label="DGIST 승차 위치 안내 사진 크게 보기">
+                            <img src="images/bus/stop1.jpg" alt="DGIST 정문 인근 대절버스 승차 위치 안내" loading="lazy">
+                            <span class="bus-stop-zoom" aria-hidden="true">🔍</span>
+                        </button>
+                        <figcaption>
+                            <strong>DGIST 정문 인근</strong>
+                            <p class="bus-parking-note">타지에서 자가용으로 오시는 분은 주변 주차 공간에 주차한 뒤 이곳에서 탑승하시는 것을 권장드립니다.</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="bus-stop-item">
+                        <button type="button" class="bus-stop-image-button" onclick="openBusStopModal('images/bus/stop2.jpg', 'ETRI 대경권연구본부 정문 인근 대절버스 승차 위치 안내')" aria-label="ETRI 대경권연구본부 승차 위치 안내 사진 크게 보기">
+                            <img src="images/bus/stop2.jpg" alt="ETRI 대경권연구본부 정문 인근 대절버스 승차 위치 안내" loading="lazy">
+                            <span class="bus-stop-zoom" aria-hidden="true">🔍</span>
+                        </button>
+                        <figcaption>
+                            <strong>ETRI 대경권연구본부 정문 인근</strong>
+                        </figcaption>
+                    </figure>
+                </div>
                 <div class="bus-contact">
                     <span class="bus-contact-label">기사님 연락처</span>
                     <a href="tel:01064784982">박종영 010-6478-4982</a>
@@ -344,10 +366,16 @@
         </div>
     </div>
 
+    <!-- 버스 승차 위치 이미지 모달 -->
+    <div id="busStopModal" class="bus-stop-modal" role="dialog" aria-modal="true" aria-label="버스 승차 위치 안내 사진" hidden>
+        <button type="button" class="bus-stop-modal-close" onclick="closeBusStopModal()" aria-label="확대 사진 닫기">&times;</button>
+        <img id="busStopModalImage" src="" alt="">
+    </div>
+
     <!-- 카카오맵 API -->
     <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=a502e286442858e1d2642dd6e3dfb632&libraries=services"></script>
     
-    <script src="script.js?v=20260707-share"></script>
+    <script src="script.js?v=20260720-bus-stop"></script>
     <script>
         // 현재 시간 표시
         document.addEventListener('DOMContentLoaded', function() {
