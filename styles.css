@@ -807,7 +807,32 @@ section {
 }
 
 .bus-summary {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
+}
+
+.bus-direction + .bus-direction {
+    margin-top: 22px;
+}
+
+.bus-direction-title {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin: 0 0 10px;
+}
+
+.bus-direction-title span {
+    color: #2d2d2d;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.bus-direction-title small {
+    color: #8a6a55;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+    word-break: keep-all;
 }
 
 .bus-route {
@@ -846,6 +871,15 @@ section {
     word-break: keep-all;
 }
 
+.transport-item .bus-return-note {
+    margin-top: 12px;
+    padding-left: 11px;
+    border-left: 3px solid #b68a62;
+    color: #715440;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
 .bus-stop-guide {
     margin-top: 20px;
     padding-top: 18px;
@@ -881,6 +915,10 @@ section {
     border-radius: 6px;
     background: #e7e4df;
     cursor: zoom-in;
+}
+
+.bus-stop-image-button--stop0 {
+    aspect-ratio: 2805 / 1902;
 }
 
 .bus-stop-image-button img {
